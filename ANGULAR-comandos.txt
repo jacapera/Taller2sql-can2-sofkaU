@@ -1,0 +1,27 @@
+npm i -g @angular/cli //instalación global en mi equipo
+ng version  //verificar la versión
+ng new my-store //crear mi nueva aplicación
+cd my-store //acceder a mi directorio de mi aplicación
+ng serve	//iniciar server para despliegue de aplicación
+ng serve -o  //abrir navegador por defecto
+ctrl + C //matar el proceso
+ng serve -o --port=3500 //cambiar de puerto por donde quiero que corra mi aplicacion por defecto es pto:4200
+
+.nvmrc  //estipular version de nodejs
+v14.17.3 //version de nodejs
+recap.ts //explicación conceptos báscos typescript
+app.component.html //
+String interpolation //forma de enviar variable del componente typescript al html
+Property[Binding] //forma de modificar atributos o propiedades
+Event (Binding) //
+Data[(Binding)] // escuchar un evento y setiar una propiedades
+NgModel
+ngIf
+
+EditorConfig for VS Code //extension
+Angular Language Service //extension
+
+#--------app.component.html--------------
+<h1> Hola mundo</h1>
+<h2>{{ 'Hola Mundo'.repeat(5) }}</h2>
+<p>3 + 3 = {{ 3 + 3 }}</p>

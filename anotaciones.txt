@@ -1,0 +1,38 @@
+node -v
+npm -v
+npm install -g @angular/cli
+
+-------------------
+Windows PowerShell
+-------------------
+Set-ExecutionPolicy RemoteSigned
+
+ng new app-taller2sql
+? Would you like to add Angular routing? Yes
+SCSS
+
+
+https://angular.io/api/forms/Form
+
+.nvmrc  // establecer la version en que vamos a desarrollar esta aplicación
+recap.ts // repasando conceptos básicos
+
+ng g component formulario
+ng g c nav
+ng g c contactos
+
+npm install bootstrap
+npm install @fortawesome/fontawesome-free
+npm install --save @fortawesome/angular-fontawesome
+
+npm install --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @ng-bootstrap/ng-bootstrap
+npm install jquery
+npm install --save-dev @types/jquery
+
+
+
+
+
+

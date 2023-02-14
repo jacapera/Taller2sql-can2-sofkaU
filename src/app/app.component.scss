@@ -1,0 +1,46 @@
+// .box {
+//   height: 150px;
+//   width: 200px;
+//   overflow: auto;
+//   background-color: blue;
+// }
+// //SmartPhone
+// .product--grid {
+//   display: flex;
+//   flex-direction: column;
+//   div {
+//     img {
+//       width: 100%;
+//       // height: 250px;
+//       border-radius: 10px;
+//     }
+//     h2, p {
+//       margin: 0;
+//     }
+//   }
+// }
+// //Tablet
+// @media screen and (min-width: 40em) {
+//   .product--grid {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     grid-gap: 15px;
+//   }
+
+// //Desktop
+// @media screen and (min-width: 62em) {
+//   .product--grid{
+//     display: grid;
+//     grid-template-columns: repeat(5, 1fr);
+//     grid-gap: 15px;
+//     }
+// }
+
+// }
+
+app-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

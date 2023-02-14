@@ -1,0 +1,46 @@
+<!-- Formulario reactivo para crear un contacto -->
+<div class="container">
+  <div class="contenedorFormulario" >
+    <h2>Crear Contacto</h2>
+    <form id="frmContactos" autocomplete="off" [formGroup]="frmContactos">
+      <div class="elementoFormulario" >
+        <label for="nombreCompleto">Nombre Completo *</label>
+        <input formControlName="nombreCompleto" type="text" id="nombreCompleto" name="nombreCompleto" placeholder="Digite su nombre completo">
+        <div *ngIf="frmContactos.get('nombreCompleto')?.hasError('required') && !frmContactos.get('nombreCompleto')?.pristine">
+          El nombre es requerido
+        </div>
+      </div>
+      <div class="elementoFormulario" >
+        <label for="telefono">Telefono *</label>
+        <input formControlName="telefono" type="text" id="telefono" name="telefono" placeholder="Digite su número telefono">
+        <div *ngIf="frmContactos.get('telefono')?.hasError('required') && !frmContactos.get('telefono')?.pristine">
+          El telefono es requerido
+        </div>
+      </div>
+      <div class="elementoFormulario" >
+        <label for="correoElectronico">Correo Electrónico *</label>
+        <input formControlName="correoElectronico" type="email" id="correoElectronico" name="correoElectronico" placeholder="Digite su correo electrónico">
+        <div *ngIf="frmContactos.get('correoElectronico')?.hasError('required') && !frmContactos.get('correoElectronico')?.pristine">
+          El correo es requerido
+        </div>
+        <div *ngIf="frmContactos.get('correoElectronico')?.hasError('email') && !frmContactos.get('correoElectronico')?.pristine">
+          El correo no es valido
+        </div>
+      </div>
+      <div class="elementoFormulario" >
+        <label for="fechaNacimiento">Fecha Nacimiento *</label>
+        <input formControlName="fechaNacimiento" type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="Digite su fecha de nacimiento">
+        <div *ngIf="frmContactos.get('fechaNacimiento')?.hasError('required') && !frmContactos.get('fechaNacimiento')?.pristine">
+          La fecha de nacimiento es requerida
+        </div>
+      </div>
+    </form>
+    <div class="btn-submit">
+      <button form="frmContactos" type="submit" id="btnEnviar" (click)="crearContacto()" [disabled]="frmContactos.invalid"
+      [style.background-color]="frmContactos.invalid? 'gray':'blue'">Enviar</button>
+    </div>
+  </div>
+</div>
+
+
+

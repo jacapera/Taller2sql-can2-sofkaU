@@ -1,0 +1,20 @@
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+  li {
+    display: flex;
+    flex-direction: row;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: bold;
+
+  }
+}
+

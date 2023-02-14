@@ -1,0 +1,109 @@
+<div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="th-thead">Id</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Email</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contacto of contactos">
+        <th class="th-tbody">{{ contacto.idContacto }}</th>
+        <th class="th-tbody">{{ contacto.nombreCompleto }}</th>
+        <th class="th-tbody">{{ contacto.telefono }}</th>
+        <th class="th-tbody">{{ contacto.correoElectronico }}</th>
+        <th class="th-tbody">{{ contacto.fechaNacimiento }}</th>
+        <th>
+          <button class="btn btn-primary" (click)="editarContacto(contacto)" >
+            <fa-icon [icon]="['fas', 'edit']"></fa-icon>
+          </button>
+          {{" "}}
+          <button class="btn btn-danger" (click)="openModalEliminar(contacto)" >
+            <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>
+          </button>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal para mostrar formulario de modificar o actualizar contacto -->
+  <div class="modal fade"
+    [ngClass]="{'show': modalOpen}"
+    id="staticBackdrop" data-bs-backdrop="static"
+    data-bs-keyboard="false" tabindex="-1"
+    role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateContactModalLabel">Actualizar Contacto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Aquí agregamos el formulario para actualizar un contacto -->
+          <form id="frmActContacto" >
+            <div class="form-group">
+              <label for="nombreCompletoInput">Nombre Completo</label>
+              <input type="text" class="form-control" id="nombreCompletoInput" [(ngModel)]="contactoSeleccionado.nombreCompleto" name="nombreCompleto">
+            </div>
+            <div class="form-group">
+              <label for="telefonoInput">Teléfono</label>
+              <input type="text" class="form-control" id="telefonoInput" [(ngModel)]="contactoSeleccionado.telefono" name="telefono">
+            </div>
+            <div class="form-group">
+              <label for="correoElectronico">Correo Electrónico</label>
+              <input type="email"
+                class="form-control" id="correoElectronico"
+                [(ngModel)]="contactoSeleccionado.correoElectronico" name="correoElectronico">
+              <div *ngIf="contactoSeleccionado.correoElectronico && !contactoSeleccionado.correoElectronico.includes('@')" style="color:red">
+                Ingresa un correo electrónico valido
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fechaNacimientoInput">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="fechaNacimientoInput" [(ngModel)]="contactoSeleccionado.fechaNacimiento" name="fechaNacimiento" >
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="guardarCambios()">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal para confirmacion de eliminar un contacto -->
+  <div class="modal fade"
+    [ngClass]="{'show': modalEliminarOpen}" id="modalEliminar"
+    data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateContactModalLabel">Eliminar Contacto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModalEliminar()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Esta segur@ de eliminar este registro?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="eliminarContacto(contactoSeleccionadoEliminar)" >Si</button>
+          <button type="button" class="btn btn-primary" (click)="closeModalEliminar()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+

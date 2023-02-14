@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
+:host {
+  font-family: "Mulish";
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.contenedorFormulario {
+  width: 100%;
+  margin-top: 25px;
+  border: 2px solid blue;
+  padding: 15px;
+  border-radius: 4px;
+  h2 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  form {
+    border: 1px solid rgb(45, 177, 230);
+    border-radius: 5px;
+    padding: 15px;
+    input {
+      height: 35px;
+    }
+  }
+}
+
+.elementoFormulario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  div {
+    color: red;
+  }
+  input {
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 5px;
+    height: 35px;
+    margin: 0px;
+  }
+  label{
+    margin: 0px;
+  }
+}
+
+.btn-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  button {
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 15px;
+    transition: transform .4s;
+    border-color: #ACD9B2;
+  }
+  button:hover {
+    transform: scale(1.2);
+  }
+}
+.btn-invalido {
+  background-color: gray;
+}
+
+//Tablet
+@media screen and (min-width: 40em) {
+  .contenedorFormulario{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    form {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .elementoFormulario {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 20px 0px;
+    justify-content: center;
+  }
+}
+
+//Desktop
+@media screen and (min-width: 62em) {
+  .contenedorFormulario{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 26px;
+    gap: 20px;
+    form {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .elementoFormulario {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 20px 0px;
+    justify-content: center;
+    input {
+      border: 1px solid black;
+      margin: 0px;
+      height: 35px;
+    }
+    label {
+      margin: 0px;
+      text-align: start;
+    }
+    div {
+      text-align: start;
+    }
+  }
+}
